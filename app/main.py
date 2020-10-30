@@ -66,8 +66,8 @@ def read_pdf_file(filepath):
     return return_data
 
 
-TEXT_PATH = "/app/app/text/attestation-de-deplacement-derogatoire.md"
-MARKDOWN_FILE = "/app/app/text/sortie.md"
+TEXT_PATH = "app/text/attestation-de-deplacement-derogatoire.md"
+MARKDOWN_FILE = "app/text/sortie.md"
 TEXT = get_text(TEXT_PATH)
 LISTE_CHAMPS = ['nom',
                 'prenom',
@@ -86,7 +86,7 @@ MOTIFS = ['travail',
           'justice',
           'autorite',
           'enfants']
-OUTPUT_PDF = "/app/app/pdf/attestation.pdf"
+OUTPUT_PDF = "app/pdf/attestation.pdf"
 
 # Flask
 app = Flask(__name__)
