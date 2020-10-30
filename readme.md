@@ -19,4 +19,7 @@ Pour éviter d'en imprimer une, génère une attestation format PDF
 - [ ] Héberger sur Heroku
 - [ ] Acheter un nom de domaine marrant (sortir.xyz ?)
 
+# Heroku
+
+Difficile d'installer texlive...
 
