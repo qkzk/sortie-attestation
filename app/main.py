@@ -11,17 +11,21 @@ L'attestation est générée au format pdf puis envoyée à l'utilisateur.
 import io
 import os
 from datetime import date
-from flask import Flask, render_template, request, send_file
+from flask import Flask
+from flask import render_template
+from flask import request
+from flask import send_file
+from flask import url_for
 import pypandoc
 
 
-def get_text(text_path) -> str:
+def get_text(text_path: str) -> str:
     '''retourne le contenu du fichier texte'''
     with open(text_path) as attestation:
         return attestation.read()
 
 
-def fill_text(text: str, parsed_form: list, motifs=None) -> str:
+def fill_text(text: str, parsed_form: list, motifs : dict) -> str:
     '''rempli le texte avec les données reçues depuis le formulaire'''
     # TODO améliorer cette merde
     parsed_form[-3] = date.today()
@@ -30,7 +34,8 @@ def fill_text(text: str, parsed_form: list, motifs=None) -> str:
 
 def parse_form(form: dict) -> list:
     '''récupère les données du formulaire et les ordonne dans une liste'''
-    return [form.get(key) for key in LISTE_CHAMPS]
+    # TODO encore de la merde
+    return [form.get(key) for key in LISTE_CHAMPS] + [form.get("nom")]
 
 
 def parse_motif(form: dict) -> dict:
@@ -44,13 +49,10 @@ def parse_motif(form: dict) -> dict:
 def create_pdf(form: dict):
     '''crée le fichier pdf et écrase le précédent'''
     text = fill_text(TEXT, parse_form(form), parse_motif(form))
-    # with open(MARKDOWN_FILE, 'w') as markdown_file:
-        # markdown_file.write(text)
-    # pypandoc.convert_file(MARKDOWN_FILE,
     pypandoc.convert_text(text,
                           'pdf',
                           format='md',
-                          outputfile=OUTPUT_PDF)
+                          outputfile=OUTPUT_PATH)
 
 
 def read_pdf_file(filepath):
@@ -68,26 +70,30 @@ def read_pdf_file(filepath):
 
 
 TEXT_PATH = "app/text/attestation-de-deplacement-derogatoire.md"
-# MARKDOWN_FILE = "app/text/sortie.md"
 TEXT = get_text(TEXT_PATH)
-LISTE_CHAMPS = ['nom',
-                'prenom',
-                'date_naissance',
-                'adresse',
-                'ville',
-                'jour',
-                'horaire',
-                'nom']
-MOTIFS = ['travail',
-          'courses',
-          'consultation',
-          'familial',
-          'handicap',
-          'sport',
-          'justice',
-          'autorite',
-          'enfants']
-OUTPUT_PDF = "app/pdf/attestation.pdf"
+LISTE_CHAMPS = {
+    "nom" : "Nom",
+    "prenom" : "Prénom",
+    "date_naissance": "Date de naissance",
+    "adresse": "Adresse",
+    "ville": "Ville actuelle",
+    "jour": "jour",
+    "horaire": "Horaire",
+}
+
+MOTIFS = {
+    "travail": "Travail",
+    "courses": "Courses",
+    "consultation": "Consultation médicale",
+    "familial": "Motif familial impérieux",
+    "handicap": "Personne en situation de handicap",
+    "sport": "Sport, ballade, promenade des animaux",
+    "justice": "Convocation judiciaire ou administrative",
+    "autorite": "Mission d'intérêt général",
+    "enfants": "Enfants"
+}
+
+OUTPUT_PATH = "app/pdf/attestation.pdf"
 
 # Flask
 app = Flask(__name__)
@@ -96,16 +102,16 @@ app = Flask(__name__)
 @app.route("/", methods=["GET"])
 def index():
     '''vue de la page d'accueil'''
-    return render_template("index.html")
+    return render_template("index.html", champs=LISTE_CHAMPS, boutons=MOTIFS)
 
 
-@app.route("/generer", methods=["POST"])
-def generer():
+@app.route("/attestation", methods=["POST"])
+def attestation():
     '''génère et envoie un PDF'''
 
     create_pdf(request.form)
-    return_data = read_pdf_file(OUTPUT_PDF)
-    os.remove(OUTPUT_PDF)
+    return_data = read_pdf_file(OUTPUT_PATH)
+    os.remove(OUTPUT_PATH)
 
     return send_file(return_data,
                      mimetype='application/pdf',

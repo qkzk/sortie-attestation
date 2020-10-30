@@ -4,99 +4,43 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
         <title>Index</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/x-icon" />
     </head>
     <body>
         <h1>
             Générateur d'attestation dérogatoire
         </h1>
-        <form action="generer" method="post" accept-charset="utf-8">
-            <table>
-                <tr>
-                    <td>
-                        <label>Nom</label> :
-                    </td>
-                    <td>
-                        <input type="text" value="" name="nom" id="nom"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Prénom</label> :
-                    </td>
-                    <td>
-                        <input type="text" value="" name="prenom" id="prenom"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Date de naissance</label> :
-                    </td>
-                    <td>
-                        <input type="text" value="" name="date_naissance" id="date_naissance"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Adresse</label> :
-                    </td>
-                    <td>
-                        <input type="text" value="" name="adresse" id="adresse"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Ville</label> :
-                    </td>
-                    <td>
-                        <input type="text" value="" name="ville" id="ville"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Horaire</label> :
-                    </td>
-                    <td>
-                        <input type="text" value="" name="horaire" id="horaire"/>
-                    </td>
-                </tr>
+        <form action="attestation" method="post" accept-charset="utf-8">
+            <table id="table_form">
+                {% for cle, valeur in champs.items() %}
+                    {% if cle != 'jour' %}
+                        <tr>
+                            <td>
+                                <label>{{ valeur }}</label>
+                            </td>
+                            <td>
+                                <input type="text" value="" name="{{ cle }}" id="{{ cle }}"/>
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
             </table>
-            <div>
-                <input type="radio" value="travail" name="motif" checked/>
-                <label for="travail">Travail</label>
+            <div id="radio_buttons">
+                {% for cle, valeur in boutons.items() %}
+                <div>
+                    <input type="radio" value="{{ cle }}" name="motif"
+                        {% if cle == "travail" %}
+                            checked
+                        {% endif %}
+                    />
+                    <label for="{{ cle }}">{{ valeur }}</label>
+                </div>
+                {% endfor %}
             </div>
-            <div>
-                <input type="radio" value="courses" name="motif"/>
-                <label for="courses">Courses</label>
+            <div id="bouton_submit">
+                <input type="submit" value="Générer" id="big_button">
             </div>
-            <div>
-                <input type="radio" value="consultation" name="motif"/>
-                <label for="consultation">Consultation</label>
-            </div>
-            <div>
-                <input type="radio" value="familial" name="motif"/>
-                <label for="familial">Familial</label>
-            </div>
-            <div>
-                <input type="radio" value="handicap" name="motif"/>
-                <label for="handicap">Handicap</label>
-            </div>
-            <div>
-                <input type="radio" value="sport" name="motif"/>
-                <label for="sport">Sport, animaux</label>
-            </div>
-            <div>
-                <input type="radio" value="justice" name="motif"/>
-                <label for="justice">Justice</label>
-            </div>
-            <div>
-                <input type="radio" value="autorite" name="motif"/>
-                <label for="autorite">Autorité administrative, intérêt général</label>
-            </div>
-            <div>
-                <input type="radio" value="enfants" name="motif"/>
-                <label for="enfants">Enfants</label>
-            </div>
-            <input type="submit" value="Générer">
         </form>
     </body>
 </html>
