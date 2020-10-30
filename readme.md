@@ -21,5 +21,5 @@ Pour éviter d'en imprimer une, génère une attestation format PDF
 
 # Heroku
 
-Difficile d'installer texlive...
+Difficile d'installer texlive... mais ça va finir par marcher
 
