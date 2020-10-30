@@ -13,7 +13,9 @@ import os
 from datetime import date
 from flask import Flask, render_template, request, send_file
 import pypandoc
+from pypandoc.pandoc_download import download_pandoc
 
+download_pandoc()
 
 def get_text(text_path) -> str:
     '''retourne le contenu du fichier texte'''
