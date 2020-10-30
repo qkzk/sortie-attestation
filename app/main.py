@@ -106,6 +106,3 @@ def generer():
     return send_file(return_data,
                      mimetype='application/pdf',
                      attachment_filename="attestation.pdf")
-
-
-app.run()
