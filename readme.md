@@ -5,7 +5,7 @@ date: "2020/10/30"
 
 ---
 
-## Le générateur : [sortie-attestation.herokuapp.com/](https://sortie-attestation.herokuapp.com/)
+## Le générateur : [sortie-attestation.herokuapp.com](https://sortie-attestation.herokuapp.com/)
 
 # Générateur d'attestation dérogatoire
 
