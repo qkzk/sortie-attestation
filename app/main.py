@@ -44,9 +44,10 @@ def parse_motif(form: dict) -> dict:
 def create_pdf(form: dict):
     '''crée le fichier pdf et écrase le précédent'''
     text = fill_text(TEXT, parse_form(form), parse_motif(form))
-    with open(MARKDOWN_FILE, 'w') as markdown_file:
-        markdown_file.write(text)
-    pypandoc.convert_file(MARKDOWN_FILE,
+    # with open(MARKDOWN_FILE, 'w') as markdown_file:
+        # markdown_file.write(text)
+    # pypandoc.convert_file(MARKDOWN_FILE,
+    pypandoc.convert_text(text,
                           'pdf',
                           format='md',
                           outputfile=OUTPUT_PDF)
@@ -67,7 +68,7 @@ def read_pdf_file(filepath):
 
 
 TEXT_PATH = "app/text/attestation-de-deplacement-derogatoire.md"
-MARKDOWN_FILE = "app/text/sortie.md"
+# MARKDOWN_FILE = "app/text/sortie.md"
 TEXT = get_text(TEXT_PATH)
 LISTE_CHAMPS = ['nom',
                 'prenom',
