@@ -9,6 +9,8 @@ date: "2020/10/30"
 
 # Générateur d'attestation dérogatoire
 
+![attestation](./img/attestation.png)
+
 Pour éviter d'en imprimer une, génère une attestation format PDF
 
 # ÉTAPES
