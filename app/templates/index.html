@@ -26,10 +26,10 @@
                     {% endif %}
                 {% endfor %}
             </table>
-            <div id="radio_buttons">
+            <div id="checkbox">
                 {% for cle, valeur in boutons.items() %}
                 <div>
-                    <input type="radio" value="{{ cle }}" name="motif"
+                    <input type="checkbox" value="{{ cle }}" name="motif"
                         {% if cle == "travail" %}
                             checked
                         {% endif %}

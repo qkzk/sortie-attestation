@@ -28,7 +28,7 @@ def get_text(text_path: str) -> str:
 def fill_text(text: str, parsed_form: list, motifs : dict) -> str:
     '''rempli le texte avec les données reçues depuis le formulaire'''
     # TODO améliorer cette merde
-    parsed_form[-3] = date.today()
+    parsed_form[-3] = date.today().strftime(DATE_FORMAT)
     return text.format(*parsed_form, **motifs)
 
 
@@ -41,8 +41,8 @@ def parse_form(form: dict) -> list:
 def parse_motif(form: dict) -> dict:
     '''crée un dictionnaire des cases à cocher depuis le formulaire'''
     motifs = {motif_possible: ' ' for motif_possible in MOTIFS}
-    if 'motif' in form:
-        motifs[form['motif']] = 'x'
+    for motif in form.getlist("motif"):
+        motifs[motif] = 'x'
     return motifs
 
 
@@ -95,6 +95,7 @@ MOTIFS = {
 }
 
 OUTPUT_PATH = "app/pdf/attestation.pdf"
+DATE_FORMAT = "%d/%m/%Y"
 
 # Flask
 app = Flask(__name__)
