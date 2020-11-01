@@ -35,7 +35,7 @@ def fill_text(text: str, parsed_form: list, motifs : dict) -> str:
 def parse_form(form: dict) -> list:
     '''récupère les données du formulaire et les ordonne dans une liste'''
     # TODO encore de la merde
-    return [form.get(key) for key in LISTE_CHAMPS] + [form.get("nom")]
+    return [form.get(key) for key in CHAMPS] + [form.get("nom")]
 
 
 def parse_motif(form: dict) -> dict:
@@ -71,7 +71,8 @@ def read_pdf_file(filepath):
 
 TEXT_PATH = "app/text/attestation-de-deplacement-derogatoire.md"
 TEXT = get_text(TEXT_PATH)
-LISTE_CHAMPS = {
+
+CHAMPS = {
     "nom" : "Nom",
     "prenom" : "Prénom",
     "date_naissance": "Date de naissance",
@@ -94,8 +95,8 @@ MOTIFS = {
     "enfants": "Enfants"
 }
 
-OUTPUT_PATH = "app/pdf/attestation.pdf"
 DATE_FORMAT = "%d/%m/%Y"
+OUTPUT_PATH = "app/pdf/attestation.pdf"
 
 # Flask
 app = Flask(__name__)
@@ -104,7 +105,7 @@ app = Flask(__name__)
 @app.route("/", methods=["GET"])
 def index():
     '''vue de la page d'accueil'''
-    return render_template("index.html", champs=LISTE_CHAMPS, boutons=MOTIFS)
+    return render_template("index.html", champs=CHAMPS, boutons=MOTIFS)
 
 
 @app.route("/attestation", methods=["POST"])
