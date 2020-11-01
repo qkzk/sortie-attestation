@@ -75,6 +75,7 @@ LISTE_CHAMPS = {
     "nom" : "Nom",
     "prenom" : "Prénom",
     "date_naissance": "Date de naissance",
+    "lieu_naissance": "Lieu de naissance",
     "adresse": "Adresse",
     "ville": "Ville actuelle",
     "jour": "jour",

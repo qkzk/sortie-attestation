@@ -13,8 +13,8 @@ dans le cadre de l’état d’urgence sanitaire.
 Je soussigné(e),
 
 Mme/M. : {0} {1}\
-Né(e) le : {2}\
-Demeurant : {3}\
+Né(e) le : {2} à {3}\
+Demeurant : {4}\
 
 \bigskip
 \bigskip
@@ -66,8 +66,8 @@ de Covid19 dans le cadre de l'état d'urgence sanitaire1 :
 \bigskip
 
 \begingroup\raggedleft
-Fait à {4}\
-Le {5} à {6}\
-Signature : {7}\
+Fait à {5}\
+Le {6} à {7}\
+Signature : {8}\
 \endgroup
 
