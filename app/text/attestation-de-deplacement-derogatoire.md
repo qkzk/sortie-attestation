@@ -1,6 +1,5 @@
 ﻿---
 title: "ATTESTATION DE DÉPLACEMENT DÉROGATOIRE"
-<!--theme: metropolis-->
 geometry: margin=2cm
 
 ---
@@ -20,8 +19,11 @@ Demeurant : {4}\
 \bigskip
 
 certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé
-en application des mesures générales nécessaires pour faire face à l'épidémie
-de Covid19 dans le cadre de l'état d'urgence sanitaire1 :
+par le décret n°2020-1310 du 29 octobre 2020 prescrivant les mesures générales
+nécessaires pour faire face à l'épidémie de Covid19 dans le cadre de l'état
+d'urgence sanitaire^[Les personnes souhaitant bénéficier de l'une de ces exceptions doivent se munir s'il y a lieu, lors de leurs déplacements
+hors de leur domicile, d'un document leur permettant de justifier que le déplacement considéré entre dans le champ de l'une
+de ces exceptions.] :
 
 
 \bigskip
@@ -29,13 +31,17 @@ de Covid19 dans le cadre de l'état d'urgence sanitaire1 :
 
 [{travail}] Déplacements entre le domicile et le lieu d’exercice de l’activité
     professionnelle ou un établissement d’enseignement ou de formation,
-    déplacements professionnels ne pouvant être différés, déplacements pour un
-    concours ou un examen.
+    déplacements professionnels ne pouvant être différés^[À utiliser par les
+    travailleurs non-salariés, lorsqu'ils ne peuvent disposer d'un justificatif
+    de déplacement établi par leur employeur.], déplacements pour un concours
+    ou un examen.
 
 [{courses}] Déplacements pour effectuer des achats de fournitures nécessaires à
-    l'activité professionnelle, des achats de première nécessité3 dans des
-    établissements dont les activités demeurent autorisées, le retrait de
-    commande et les livraisons à domicile.
+    l'activité professionnelle, des achats de première nécessité^[Y compris les
+    acquisitions à titre gratuit (distribution de denrées alimentaires...) et
+    les déplacements liés à la perception de prestations sociales et au retrait
+    d'espèces.] dans des établissements dont les activités demeurent autorisées,
+    le retrait de commande et les livraisons à domicile.
 
 [{consultation}] Consultations, examens et soins ne pouvant être ni assurés  à distance ni
     différés et l’achat de médicaments.
