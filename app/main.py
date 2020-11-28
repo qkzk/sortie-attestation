@@ -85,6 +85,7 @@ CHAMPS = {
 
 MOTIFS = {
     "travail": "Travail",
+    "culte": "Culte",
     "courses": "Courses",
     "consultation": "Consultation médicale",
     "familial": "Motif familial impérieux",

@@ -1,6 +1,6 @@
 ﻿---
 title: "ATTESTATION DE DÉPLACEMENT DÉROGATOIRE"
-geometry: margin=2cm
+geometry: margin=1.5cm
 
 ---
 
@@ -36,12 +36,12 @@ de ces exceptions.] :
     de déplacement établi par leur employeur.], déplacements pour un concours
     ou un examen.
 
-[{courses}] Déplacements pour effectuer des achats de fournitures nécessaires à
-    l'activité professionnelle, des achats de première nécessité^[Y compris les
-    acquisitions à titre gratuit (distribution de denrées alimentaires...) et
-    les déplacements liés à la perception de prestations sociales et au retrait
-    d'espèces.] dans des établissements dont les activités demeurent autorisées,
-    le retrait de commande et les livraisons à domicile.
+[{culte}] Déplacements pour se rendre dans un établissement culturel autorisé ou un 
+     lieu de culte ; 
+
+[{courses}] Déplacements pour effectuer des achats de biens, pour des
+     services dont la fourniture est autorisée, pour les retraits de commandes et
+     les livraisons à domicile.
 
 [{consultation}] Consultations, examens et soins ne pouvant être ni assurés  à distance ni
     différés et l’achat de médicaments.
@@ -51,12 +51,13 @@ de ces exceptions.] :
 
 [{handicap}] Déplacement des personnes en situation de handicap et leur accompagnant.
 
-[{sport}] Déplacements brefs, dans la limite d'une heure quotidienne et dans un rayon
-    maximal d'un kilomètre autour du domicile, liés soit à l'activité physique
-    individuelle des personnes, à l'exclusion de toute pratique sportive collective
-    et de toute proximité avec d'autres personnes, soit à la promenade avec les
-    seules personnes regroupées dans un même domicile, soit aux besoins des animaux
-    de compagnie.
+[{sport}] Déplacements en plein air ou vers un lieu de plein air, sans changement du
+     lieu de résidence, dans la limite de trois heures quotidiennes et dans un
+     rayon maximal de vingt kilomètres autour du domicile, liés soit à l’activité
+     physique ou aux loisirs individuels, à l’exclusion de toute pratique sportive
+     collective et de toute proximité avec d’autres personnes, soit à la promenade
+     avec les seules personnes regroupées dans un même domicile, soit aux besoins
+     des animaux de compagnie.
 
 [{justice}] Convocation judiciaire ou administrative et pour se rendre dans un service
     public
@@ -75,5 +76,6 @@ de ces exceptions.] :
 Fait à {5}\
 Le {6} à {7}\
 Signature : {8}\
+\bigskip
 \endgroup
 
