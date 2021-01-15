@@ -85,15 +85,13 @@ CHAMPS = {
 
 MOTIFS = {
     "travail": "Travail",
-    "culte": "Culte",
-    "courses": "Courses",
     "consultation": "Consultation médicale",
     "familial": "Motif familial impérieux",
     "handicap": "Personne en situation de handicap",
-    "sport": "Sport, ballade, promenade des animaux",
     "justice": "Convocation judiciaire ou administrative",
     "autorite": "Mission d'intérêt général",
-    "enfants": "Enfants"
+    "transit": "transit",
+    "animaux": "animaux",
 }
 
 DATE_FORMAT = "%d/%m/%Y"
