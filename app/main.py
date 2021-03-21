@@ -84,14 +84,18 @@ CHAMPS = {
 }
 
 MOTIFS = {
-    "travail": "Travail",
-    "consultation": "Consultation médicale",
-    "familial": "Motif familial impérieux",
-    "handicap": "Personne en situation de handicap",
-    "justice": "Convocation judiciaire ou administrative",
-    "autorite": "Mission d'intérêt général",
-    "transit": "transit",
-    "animaux": "animaux",
+    "sport": "Activité sportive",
+    "achats": "Achats de première nécessité",
+    "enfants": "Activités scolaires, enfants",
+    "culte": "Établissement culturel, lieux de culte",
+    "administration": "Service public",
+    "autorite": "Professionnel, demande d'une autorité",
+    "consultation": "Consultations, vaccination, pharmacie",
+    "famille": "Motif familial impérieux",
+    "handicap": "Situation de handicap ou accompagnant",
+    "justice": "Convocation judiciaire",
+    "demenagement": "Déménagement",
+    "transit": "Transit vers les gares ou aéroports",
 }
 
 DATE_FORMAT = "%d/%m/%Y"
